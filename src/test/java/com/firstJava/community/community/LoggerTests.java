@@ -22,4 +22,5 @@ public class LoggerTests {
         logger.warn("warn Log");
         logger.error("error Log");
     }
+    //
 }
