@@ -44,6 +44,7 @@ public class HomeController {
             }
         }
         model.addAttribute("discussPosts",discussPosts);
+        //返回逻辑视图，要在/resources/template下建立对应的index.html文件
         return "/index";
     }
 }

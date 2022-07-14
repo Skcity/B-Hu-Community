@@ -2,6 +2,7 @@ package com.firstJava.community.community.controller;
 
 import com.firstJava.community.community.entity.User;
 import com.firstJava.community.community.service.service1;
+import com.firstJava.community.community.util.CommunityUtil;
 import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -115,6 +119,48 @@ public class demo {
         list.add(emp);
 
         return list;
+    }
+
+    //cookie
+    //服务器设置cookie发送给浏览器存储
+    @RequestMapping(path = "/cookie/set", method = RequestMethod.GET)
+    @ResponseBody
+    public String setCookie(HttpServletResponse response) {
+        // 创建cookie
+        Cookie cookie = new Cookie("code", CommunityUtil.generateUUID());
+        // 设置cookie生效的范围
+        cookie.setPath("/community/alpha");
+        // 设置cookie的生存时间，设置后则存入硬盘
+        cookie.setMaxAge(60 * 10);
+        // 发送cookie
+        response.addCookie(cookie);
+
+        return "set cookie";
+    }
+    //浏览器访问服务器时自动带回cookie，服务端获取cookie内容
+    @RequestMapping(path = "/cookie/get", method = RequestMethod.GET)
+    @ResponseBody
+    public String getCookie(@CookieValue("code") String code) {//选取key为code的cookie
+        System.out.println(code);
+        return "get cookie";
+    }
+
+    // session示例
+
+    @RequestMapping(path = "/session/set", method = RequestMethod.GET)
+    @ResponseBody
+    public String setSession(HttpSession session) {
+        session.setAttribute("id", 1);
+        session.setAttribute("name", "Test");
+        return "set session";
+    }
+
+    @RequestMapping(path = "/session/get", method = RequestMethod.GET)
+    @ResponseBody
+    public String getSession(HttpSession session) {
+        System.out.println(session.getAttribute("id"));
+        System.out.println(session.getAttribute("name"));
+        return "get session";
     }
 
 

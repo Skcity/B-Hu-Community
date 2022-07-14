@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Tangerine);
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-weight:600
+
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #DCDCDC;
+}
+
+
+.card{
+    position: absolute;
+    width:600px;
+    top:15%;
+    height:550px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0,0.15);
+
+}
+.card .logo{
+    position: relative;
+    top: -70px;
+    left: 10px;
+}
+.card .logo h1{
+    font-weight: 900;
+    font-size: 40px;
+    color:#007bf5f2;
+}
+.card .logo .sublogo{
+    position: relative;
+    top: -10px;
+    left: 50px;
+}
+.card img{
+    position: absolute;
+    top:10%;
+    left:35%;
+    width: 170px;
+}
+.card .headline{
+    position: absolute;
+    font-size: 18px;
+    top:40%;
+    left:8%;
+}
+.card .hello{
+    position: absolute;
+    top:4%;
+    font-size: 18px;
+    left:5%;
+    color: #555;
+}
+.card .details h2{
+    position: absolute;
+    top:60%;
+    left:12%;
+}
+.card .details h1{
+    position: absolute;
+    top:70%;
+    font-size: 80px;
+    left:25%;
+    color: #555;
+}
+.card .tail{
+    position: absolute;
+    top:103%;
+    font-size: 18px;
+    left:70%;
+    color: #4674a2f2;
+}
+
