@@ -1,13 +1,12 @@
 package com.firstJava.community.community.service;
 
-import com.aliyun.oss.model.LiveChannelListing;
 import com.firstJava.community.community.dao.LoginTicketMapper;
 import com.firstJava.community.community.dao.UserMapper;
 import com.firstJava.community.community.entity.LoginTicket;
 import com.firstJava.community.community.entity.User;
+import com.firstJava.community.community.util.MailClient;
 import com.firstJava.community.community.util.CommunityConstant;
 import com.firstJava.community.community.util.CommunityUtil;
-import com.firstJava.community.community.util.MailClient;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -43,6 +42,7 @@ public class UserService implements CommunityConstant {
     public User findUserById(int id){
         return userMapper.selectById(id);
     }
+
     public Map<String, Object> register(User user) {
         Map<String, Object> map = new HashMap<>();
 
@@ -83,7 +83,6 @@ public class UserService implements CommunityConstant {
         user.setType(0);
         user.setStatus(0);
         user.setActivationCode(CommunityUtil.generateUUID());
-        user.setHeaderUrl(String.format("http://images.nowcoder.com/head/%dt.png", new Random().nextInt(1000)));
         user.setCreateTime(new Date());
         userMapper.insertUser(user);
 

@@ -3,7 +3,6 @@ package com.firstJava.community.community.service;
 
 import com.firstJava.community.community.dao.UserMapper;
 import com.firstJava.community.community.dao.domoDao;
-import com.firstJava.community.community.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

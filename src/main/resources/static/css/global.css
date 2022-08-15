@@ -9,6 +9,12 @@ body {
 	height: 100%;
 }
 
+.font-face {
+	font-family: "Ë¼Ô´ºÚÌå";font-weight: 700;src: url("//at.alicdn.com/wf/webfont/wuqvZLbDK6Mw/YNABlFC8V7L7GYcBFK2nl.woff2") format("woff2"),
+url("//at.alicdn.com/wf/webfont/wuqvZLbDK6Mw/H2c15hJaNgW9Y64zX_AO1.woff") ;
+	font-display: swap;
+}
+
 .nk-container {
 	position:relative;
 	height:auto;
